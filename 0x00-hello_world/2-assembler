@@ -1,2 +1,2 @@
 #!/bin/bash
-cc -S -o $CSFILE
+cc -S -o $CFILE
