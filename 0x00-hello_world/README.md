@@ -1,0 +1,1 @@
+This directory holds scrips for first C project.
