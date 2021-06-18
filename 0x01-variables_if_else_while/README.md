@@ -1,0 +1,1 @@
+This directory holds the files for the second C project on variables_if_else_while.
