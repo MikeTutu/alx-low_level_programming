@@ -22,7 +22,7 @@ printf("%d is zero", n);
 }
 else if (n < 0)
 {
-printf("%d i0-positive_or_negative.cs negative", n);
+printf("%d is negative", n);
 }
 return (0);
 }
