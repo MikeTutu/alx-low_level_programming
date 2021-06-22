@@ -2,10 +2,11 @@
 #include "holberton.h"
 
 /**
- * main - Entry point
+ * main - check the code for ALX School students.
  *
- * Return: Always 0 (Success)
+ * Return: Always 0.
  */
+void print_alphabet(void);
 int main(void)
 {
 char ch;
@@ -16,4 +17,5 @@ _putchar(ch);
 ch++;
 }
 _putchar('\n');
+return (0);
 }
