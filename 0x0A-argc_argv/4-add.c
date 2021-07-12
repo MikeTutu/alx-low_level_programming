@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "holberton.h"
 
 /**
  * main - print sum of arguments received in command line
@@ -9,21 +10,31 @@
  */
 int main(int argc, char *argv[])
 {
-	int i;
-	int sum = 0;
+	int sum, num, i, j, k;
+
+	sum = 0;
 
 	for (i = 1; i < argc; i++)
 	{
-		if (*argv[i] >= '0' && *argv[i] <= '9')
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			sum += (atoi(argv[i]));
-		}
-		else
-		{
-			printf("Error\n");
-			return (1);
+			if (argv[i][j] > '9' || argv[i][j] < '0')
+			{
+				puts("Error");
+				return (1);
+			}
 		}
 	}
+
+	for (k = 1; k < argc; k++)
+	{
+		num = _atoi(argv[k]);
+		if (num >= 0)
+		{
+			sum += num;
+		}
+	}
+
 	printf("%d\n", sum);
 	return (0);
 }
