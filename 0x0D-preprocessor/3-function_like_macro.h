@@ -1,15 +1,6 @@
-#include <stdio.h>
-/**
- * ABS - return absolute value of int
- * @x: value passed
- * Return: absolute value of x
- */
-unsigned int ABS(int x)
-{
-	if (x < 0)
-	{
-		x = x * -1;
-	}
-	printf("%d\n", x);
-	return (0);
-}
+#ifndef FUNCTION_LIKE_MACRO
+#define FUNCTION_LIKE_MACRO
+
+#define ABS(x) (x * ((x < 0) * (-1) + (x > 0)))
+
+#endif
