@@ -1,14 +1,15 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "function_pointers.h"
 /**
- * print_name - prints name using function pointer
- * @name: name location
- * @f: function pointed to
- * Return: anything
+ * print_name - f points to either func in main
+ * @name: name
+ * @f: pointer to print upp or non upp func
+ * Return: void
  */
 void print_name(char *name, void (*f)(char *))
 {
-	if (f == NULL)
+	if (name == NULL || f == NULL)
 		return;
-	(*f)(name);
+	f(name);
 }
