@@ -1,31 +1,47 @@
-#include "holberton.h"
-#include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include "holberton.h"
+
 /**
- * binary_to_uint - converts binary number to decimal
- * @b: binary number
- * Return: decimal
- */
+  * binary_to_uint - Converts a binary number to an unsigned int
+  * @b: The binary string to converts
+  *
+  * Return: The positive number converted from a binary
+  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int decimal = 0;
-	unsigned int i;
+	unsigned int len = 0, count = 0, sum = 0;
 
 	if (b == NULL)
-	{
 		return (0);
-	}
-	for (i = 0; b[i] != '\0'; i++)
+
+	len = _strlen(b);
+	while (len--)
 	{
-		if (b[i] != '0' && b[i] != '1')
-		{
+		if (b[len] != 48 && b[len] != 49)
 			return (0);
-		}
-		decimal = decimal << 1;
-		if (b[i] == '1')
-		{
-			decimal++;
-		}
+
+		if (b[len] == 49)
+			sum += 1 << count;
+
+		count++;
 	}
-	return (decimal);
+
+	return (sum);
+}
+
+/**
+  * _strlen - Returns the length of a string
+  * @s: String to count
+  *
+  * Return: String length
+  */
+int _strlen(const char *s)
+{
+	int c = 0;
+
+	while (s[c])
+		c++;
+
+	return (c);
 }
