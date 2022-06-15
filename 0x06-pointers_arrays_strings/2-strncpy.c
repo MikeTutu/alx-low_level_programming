@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 /**
  * _strcmp - adding two lines together
@@ -6,19 +7,15 @@
  * @s2: 2nd string
  * Return: result
  */
-int _strcmp(char *s1, char *s2)
-{
-	int i = 0;
-	int result;
 
-	while (s1[i] != '\0')
-	{
-		if (s1[i] != s2[i])
-		{
-			result = s1[i] - s2[i];
-			return (result);
-		}
-		i++;
-	}
-	return (0);
+char *_strncpy(char *dest, char *src, int n)
+{
+	/* size_t dest_len = strlen(dest); */
+	int i;
+
+	for (i = 0; i < n && src[i] != '\0'; i++)
+		dest[i] = src[i];
+	for ( ; i < n; i++)
+		dest[i] = '\0';
+	return (dest);
 }
